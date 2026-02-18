@@ -1,0 +1,38 @@
+name: Compile package
+on: [push]
+jobs:
+  build_package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX file
+        uses: xu-cheng/texlive-action@v3
+        with:
+          run: |
+            pdflatex orgstyle.dtx
+            makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
+            makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
+            pdflatex orgstyle.dtx
+      - name: Move CTAN files into folder
+        run: |
+          mkdir ctan
+          mkdir ctan/orgstyle
+          mv orgstyle.dtx ctan/orgstyle/orgstyle.dtx
+          mv orgstyle.ins ctan/orgstyle/orgstyle.ins
+          mv README.md ctan/orgstyle/README.md
+          mv orgstyle.pdf ctan/orgstyle/orgstyle-doc.pdf
+      - name: Move sty files into folder
+        run: |
+          mkdir sty
+          mv orgstyle.sty sty/orgstyle.sty
+      - name: Zip CTAN files
+        uses: actions/upload-artifact@v4
+        with:
+          name: CTAN-files
+          path: ctan/
+      - name: Zip sty file
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: sty/

@@ -1,0 +1,23 @@
+## Regular LaTeX ignores
+*.aux
+*.hd
+*.log
+*.out
+*.pdf
+*.toc
+*.synctex.gz
+
+## dtx ignores
+*.ins
+*.sty
+*.cls
+*.md
+
+## Misc ignores
+*.glo
+*.idx
+*.ilg
+*.gls
+*.ind
+*.nav
+*.snm

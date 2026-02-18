@@ -1,0 +1,351 @@
+% \iffalse meta-comment
+%
+% Copyright (c) 2026- Jesse Straat
+% 
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Jesse Straat.
+%
+% This work consists of the main file orgstyle.dtx
+% and the derived files
+%      orgstyle.sty, orgstyle.pdf, orgstyle.ins
+%
+% Unpacking:
+% (a) If orgstyle.ins is present:
+%		pdflatex orgstyle.ins
+% (b) If orgstyle.ins is absent:
+%		pdflatex orgstyle.dtx
+%
+% Documentation:
+% 	    pdflatex orgstyle.dtx
+%       makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
+%       makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
+%       pdflatex orgstyle.dtx
+%
+%<*ignore>
+\iffalse
+%</ignore>
+%
+%<*readme>
+# `orgstyle`
+
+PLACEHOLDER READEM
+
+# Installation
+Run the following in the command line:
+1\. If orgstyle.ins is present:
+    `pdflatex orgstyle.ins`
+2\. If orgstyle.ins is absent:
+    `pdflatex orgstyle.dtx`
+
+Move `.sty` and `.cls` files to a folder that TeX can find.
+
+# Documentation
+Run the following in the command line:
+```
+pdflatex orgstyle.dtx
+makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
+makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
+pdflatex orgstyle.dtx
+```
+This automatically unpacks the package, as well.
+
+
+If you are looking for comments or documentation, you won't find
+any in the source. These packages make use of literate programming, which means
+that the documentation is given in the form of a pdf file. You can
+probably find orgstyle.pdf in this folder, by running "texdoc --view orgstyle"
+in the command line, or Googling
+"[your distribution] how to find package documentation".
+If you're using MiKTeX, open MiKTeX console, go to
+"Documentation" and look for "orgstyle".
+
+---
+
+&copy; 2026- Jesse Straat
+
+License: [LPPL1.3c](https://www.latex-project.org/lppl.txt)
+
+[GitHub Repository](https://github.com/JesseStraat/orgstyle)
+
+%</readme>
+%
+%<*ignore>
+\fi
+\def\plainTeXstring{plain}
+\ifx\fmtname\plainTeXstring\else
+  \expandafter\begingroup
+\fi
+%</ignore>
+%
+%<*install>
+\input docstrip.tex
+\Msg{************************************************************************}
+\Msg{* Installation}
+\Msg{* Package: orgstyle 2026/02/17 v1.0}
+\Msg{************************************************************************}
+
+\keepsilent
+\askforoverwritefalse
+
+\preamble
+
+Copyright (c) 2026- Jesse Straat
+
+This work may be distributed and/or modified under the
+conditions of the LaTeX Project Public License, either version 1.3
+of this license or (at your option) any later version.
+The latest version of this license is in
+  https://www.latex-project.org/lppl.txt
+and version 1.3c or later is part of all distributions of LaTeX
+version 2008 or later.
+
+This work has the LPPL maintenance status `maintained'.
+
+The current maintainer of this work is Jesse Straat.
+
+This work consists of the main file orgstyle.dtx
+and the derived files
+    orgstyle.sty, orgstyle.pdf, orgstyle.ins
+
+If you are looking for comments or documentation, you won't find
+any in the source. These packages make use of literate programming, which means
+that the documentation is given in the form of a pdf file. You can
+probably find PLACEHOLDER.pdf in this folder, by running "texdoc --view orgstyle"
+in the command line, or Googling
+"[your distribution] how to find package documentation".
+If you're using MiKTeX, open MiKTeX console, go to
+"Documentation" and look for "orgstyle".
+
+\endpreamble
+
+\usedir{tex/latex/orgstyle}
+\generate{
+    \file{orgstyle.sty}{\from{\jobname.dtx}{orgstyle}}
+}
+
+\obeyspaces
+\Msg{************************************************************************}
+\Msg{*}
+\Msg{* To finish the installation you have to move the following}
+\Msg{* files into a directory searched by TeX:}
+\Msg{*}
+\Msg{*    orgstyle.sty}
+\Msg{*}
+\Msg{* To produce the documentation run the file `orgstyle.dtx'}
+\Msg{* through LaTeX.}
+\Msg{*}
+\Msg{* Happy TeXing!}
+\Msg{*}
+\Msg{************************************************************************}
+
+%</install>
+%<install>\endbatchfile
+%
+%<*ignore>
+\usedir{source/latex/orgstyle}
+\generate{
+    \file{\jobname.ins}{\from{\jobname.dtx}{install}}
+}
+
+\nopreamble\nopostamble
+\usedir{doc/latex/orgstyle}
+\generate{
+    \file{README.md}{\from{\jobname.dtx}{readme}}
+}
+
+\ifx\fmtname\plainTeXstring
+  \expandafter\endbatchfile
+\else
+  \expandafter\endgroup
+\fi
+%</ignore>
+
+%<*driver>
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\documentclass{ltxdoc}
+\usepackage[english]{babel}
+\usepackage[final,
+hyperindex=false,
+colorlinks,
+]{hyperref}
+\usepackage{hologo}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \GetFileInfo{\jobname.sty}
+%
+% \DoNotIndex{\begin,\end}
+%
+% \title{^^A
+%     orgstyle\thanks{^^A
+%         Version \fileversion, last revised \filedate.^^A
+%     }^^A
+% }^^A
+% \author{^^A
+% 	Jesse Straat^^A
+% }
+% \date{\filedate}
+%
+% \maketitle
+%
+% \begin{abstract}
+%     \noindent Abstract
+% \end{abstract}
+%
+% \tableofcontents
+%
+% \changes{v1.0}{2026/02/17}{First release}
+%
+%
+%
+%\StopEventually{^^A
+%  \clearpage
+%  \PrintChanges
+%  \addcontentsline{toc}{section}{\leftmark}
+%  \PrintIndex
+%  \addcontentsline{toc}{section}{\leftmark}
+%}
+%
+%
+%
+%
+% \section{Documentation}
+% This is the documentation to \textsf{orgstyle}; a package
+% that automatically adapts
+% the house style of organisations to your \LaTeX{} document.
+% This is done mainly by loading the organisation's fonts and
+% defining some colours.\par
+% In the case of \textsf{beamer} presentations (and posters),
+% \textsf{orgstyle} also automatically implements the organisation's
+% colours into the presentation. The colours change best with the
+% \textsf{whale} colortheme or similar.
+%
+%
+%
+%
+% \clearpage
+% \section{Source code}
+% This section contains the source code of the library.
+% It contains some explaining descriptions, allowing for
+% \href{https://https://en.wikipedia.org/wiki/Literate_programming}{literate programming}.
+% This is where the documentation for ``regular people'' ends.
+%^^A
+%^^A
+%^^A
+%^^A
+%    \begin{macrocode}
+%<*orgstyle>
+\RequirePackage{iftex}
+\RequirePackage{xcolor}
+%    \end{macrocode}
+% \begin{macro}{\orgstyle}
+%    \begin{macrocode}
+\newcommand{\orgstyle}[1]{%
+    \IfFileExists{orgstyle-#1.sty}{%
+%    \end{macrocode}
+% The organisation style file exists;
+% we will import its parameters.
+%    \begin{macrocode}
+        \usepackage{orgstyle-#1}%
+%    \end{macrocode}
+% We implement the parameters in several
+% commands.
+%    \begin{macrocode} 
+        \orgstyle@font
+    }{%
+        % File not found
+        \PackageError{orgstyle}%
+        {The organisation style '#1'
+        was not found.}%
+        {Check for typos or create your
+        own organisation style.}%
+    }
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\orgstyle@font}
+% The included fonts are imported. We automatically check whether
+% the engine used is \hologo{pdfLaTeX}. If this is the case, we
+% use a corresponding font. If not, we assume the compiler is
+% \textsf{fontspec}-compatible.
+%    \begin{macrocode}
+\newcommand{\orgstyle@font}{%
+    \ifpdftex
+        \orgstyle@load@pdffont
+    \else
+        % Assume fontspec: use typefont
+        \RequirePackage{fontspec}
+        \orgstyle@load@tffont
+    \fi
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\orgstyle@load@pdffont}
+% We import a \hologo{pdfLaTeX}-compatible font. Since the possible
+% input of such fonts is highly variable, we just assume the input
+% is a piece of code which loads the fonts.
+%    \begin{macrocode}
+\newcommand{\orgstyle@load@pdffont}{%
+    \ifcsname orgstyle@pdffont\endcsname
+        \orgstyle@pdffont
+    \fi
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\orgstyle@load@tffont}
+% The engine is compatible with \textsf{fontspec}, likely either
+% \hologo{LuaLaTeX} or \hologo{XeLaTeX}. The fonts are just
+% typefont files (either |.otf| or |.ttf|), and can thus be loaded
+% straightforwardly.
+%    \begin{macrocode}
+\newcommand{\orgstyle@load@tffont}{%
+    \ifcsname orgstyle@tfmainfont\endcsname
+        \orgstyle@existsload@tffont{\orgstyle@tfmainfont}{main}
+    \fi
+    \ifcsname orgstyle@tfsansfont\endcsname
+        \orgstyle@existsload@tffont{\orgstyle@tfsansfont}{sans}
+    \fi
+    \ifcsname orgstyle@tfmonofont\endcsname
+        \orgstyle@existsload@tffont{\orgstyle@tfmonofont}{mono}
+    \fi
+}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\orgstyle@existsload@tffont}
+% This macro checks whether a typefont exists or not. If It
+% does, the font is loaded. The first argument should be the name
+% of the font, e.g., |Helvetica|. The second argument should be
+% the type of font, i.e., |main| for \textrm{serif/Roman}, |sans| for \textsf{sans serif},
+% or |mono| for \texttt{typewriter fonts}.
+%    \begin{macrocode}
+\newcommand{\orgstyle@existsload@tffont}[2]{%
+    \IfFontExistsTF{#1}
+        {\csname set#2font\endcsname{#1}}
+        {
+            \PackageWarning{orgstyle}{Font #1 not found. 
+            Your organisation recommends its usage. 
+            Please install it from the internet or your
+            LaTeX distribution.}
+        }
+}
+%    \end{macrocode}
+% \end{macro}
+%    \begin{macrocode}
+%</orgstyle>
+%    \end{macrocode}
+% \Finale
