@@ -25,9 +25,9 @@ jobs:
           mv orgstyle.pdf ctan/orgstyle/orgstyle-doc.pdf
       - name: Move sty files into folder
         run: |
-          mkdir sty
+          mkdir -p sty/orgstyles
           mv orgstyle.sty sty/orgstyle.sty
-          mv orgstyles sty/orgstyles
+          mv orgstyles/orgstyle-*.sty sty/orgstyles
       - name: Zip CTAN files
         uses: actions/upload-artifact@v4
         with:
