@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir sty
           mv orgstyle.sty sty/orgstyle.sty
-          mv orgstyle sty/orgstyle
+          mv orgstyles sty/orgstyles
       - name: Zip CTAN files
         uses: actions/upload-artifact@v4
         with:
