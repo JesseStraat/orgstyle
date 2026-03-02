@@ -249,6 +249,37 @@ colorlinks,
 % colours into the presentation. The colours change best with the
 % \textsf{whale} colortheme or similar.
 %^^A
+% \subsection{Usage}
+% To use this package, use |\usepackage{orgstyle}|. Then, load
+% your organisation's style using |\orgstyle{ORGANISATION}|. Make
+% sure to do this after loading other style packages, such as a
+% beamertheme, to make sure nothing is overwritten.\par
+% An example of implementation in an article is given below.
+% \begin{verbatim}
+% \documentclass{article}
+% \usepackage{orgstyle}
+% \orgstyle{vu-nl}
+% 
+% \begin{document}
+%     Lorem Ipsum.
+% \end{document}
+% \end{verbatim}\par
+% We also provide an implementation in beamer.
+% \begin{verbatim}
+% \documentclass{beamer}
+% \usetheme{Frankfurt}
+% \usepackage{orgstyle}
+% \orgstyle{vu-nl}
+% 
+% \begin{document}
+% \begin{frame}{Foo Theory}
+%     \begin{theorem}{Baz Theorem}
+%       Lorem Ipsum.
+%     \end{theorem}
+% \end{frame}
+% \end{document}
+% \end{verbatim}
+%^^A
 % \clearpage
 % \subsection{List of \textsf{orgstyle} files}
 % The following organisation styles are automatically part
