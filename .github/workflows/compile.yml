@@ -10,17 +10,17 @@ jobs:
         uses: xu-cheng/texlive-action@v3
         with:
           run: |
-            pdflatex orgstyle.dtx
-            makeindex -s gind.ist -o orgstyle.ind orgstyle.idx
-            makeindex -s gglo.ist -o orgstyle.gls orgstyle.glo
-            pdflatex orgstyle.dtx
+            pdflatex brandstyler.dtx
+            makeindex -s gind.ist -o brandstyler.ind brandstyler.idx
+            makeindex -s gglo.ist -o brandstyler.gls brandstyler.glo
+            pdflatex brandstyler.dtx
       - name: Move CTAN files into folder
         run: |
-          mkdir -p ctan/orgstyle
-          mv orgstyle.dtx ctan/orgstyle/orgstyle.dtx
-          mv orgstyle.ins ctan/orgstyle/orgstyle.ins
-          mv README.md ctan/orgstyle/README.md
-          mv orgstyle.pdf ctan/orgstyle/orgstyle-doc.pdf
+          mkdir -p ctan/brandstyler
+          mv brandstyler.dtx ctan/brandstyler/brandstyler.dtx
+          mv brandstyler.ins ctan/brandstyler/brandstyler.ins
+          mv README.md ctan/brandstyler/README.md
+          mv brandstyler.pdf ctan/brandstyler/brandstyler-doc.pdf
       - name: Move sty files into folder
         run: |
           mkdir sty
